@@ -18,38 +18,38 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        fonts-noto-cjk=1:20240730+repack1-1 \
-        libfontconfig1=2.15.0-2.3 \
-        memcached=1.6.38-1 \
-        musl=1.2.5-3 \
+        fonts-noto-cjk \
+        libfontconfig1 \
+        memcached \
+        musl \
         nginx \
     \
     && dpkg --install /tmp/grafana.deb \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then \
         apt-get install -y --no-install-recommends \
-            libasound2t64=1.2.14-1 \
-            libcups2t64=2.4.10-3+deb13u1 \
-            libdbus-1-3=1.16.2-2 \
-            libdrm-amdgpu1=2.4.124-2 \
-            libgbm1=25.0.7-2 \
-            libglib2.0-0t64=2.84.4-3~deb13u1 \
-            libgtk-4-1=4.18.6+ds-2 \
-            libnss3=2:3.110-1 \
-            libx11-6=2:1.8.12-1 \
-            libx11-xcb1=2:1.8.12-1 \
-            libxcb-dri3-0=1.17.0-2+b1 \
-            libxcomposite1=1:0.4.6-1 \
-            libxcursor1=1:1.2.3-1 \
-            libxdamage1=1:1.1.6-1+b2 \
-            libxext6=2:1.3.4-1+b3 \
-            libxfixes3=1:6.0.0-2+b4 \
-            libxi6=2:1.8.2-1 \
-            libxrandr2=2:1.5.4-1+b3 \
-            libxrender1=1:0.9.12-1 \
-            libxshmfence1=1.3.3-1 \
-            libxss1=1:1.2.3-1+b3 \
-            libxtst6=2:1.2.5-1 \
+            libasound2t64 \
+            libcups2t64 \
+            libdbus-1-3 \
+            libdrm-amdgpu1 \
+            libgbm1 \
+            libglib2.0-0t64 \
+            libgtk-4-1 \
+            libnss3 \
+            libx11-6 \
+            libx11-xcb1 \
+            libxcb-dri3-0 \
+            libxcomposite1 \
+            libxcursor1 \
+            libxdamage1 \
+            libxext6 \
+            libxfixes3 \
+            libxi6 \
+            libxrandr2 \
+            libxrender1 \
+            libxshmfence1 \
+            libxss1 \
+            libxtst6 \
         && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
     fi \
     \
