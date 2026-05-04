@@ -4,7 +4,12 @@
 
 Please do not report security vulnerabilities in public issues.
 
-Instead, contact the maintainer privately through the repository owner profile:
+Use GitHub's private vulnerability reporting flow for this repository:
+
+- <https://github.com/hellosamblack/addon-grafana/security/advisories/new>
+
+If that form is unavailable to you, contact the maintainer privately through the
+repository owner profile and do not open a public issue:
 
 - <https://github.com/hellosamblack>
 

@@ -1,6 +1,7 @@
-# Home Assistant Add-on: Grafana v13 Fork
+# Home Assistant Add-on: Grafana v13
 
-Fork of the Grafana add-on v12 packaging, updated to run Grafana OSS v13.0.1.
+This is a fork of the Grafana add-on v12 packaging, updated to run Grafana OSS
+v13.0.1.
 
 Grafana allows you to query, visualize, alert on and understand your metrics
 no matter where they are stored. Create, explore, and share dashboards. Learn

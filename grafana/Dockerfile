@@ -58,8 +58,6 @@ LABEL \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Sam Black" \
-    io.hass.name="${BUILD_NAME}" \
-    io.hass.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.vendor="hellosamblack" \
     org.opencontainers.image.authors="Sam Black" \
     org.opencontainers.image.licenses="MIT" \
