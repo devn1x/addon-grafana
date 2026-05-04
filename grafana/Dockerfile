@@ -8,7 +8,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG BUILD_ARCH=amd64
 ARG GRAFANA_VERSION="v13.0.1"
-ARG GRAFANA_IMAGE_RENDERER_VERSION="v4.1.5"
 RUN \
     ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
@@ -25,33 +24,6 @@ RUN \
         nginx \
     \
     && dpkg --install /tmp/grafana.deb \
-    \
-    && if [ "${BUILD_ARCH}" = "amd64" ]; then \
-        apt-get install -y --no-install-recommends \
-            libasound2t64 \
-            libcups2t64 \
-            libdbus-1-3 \
-            libdrm-amdgpu1 \
-            libgbm1 \
-            libglib2.0-0t64 \
-            libgtk-4-1 \
-            libnss3 \
-            libx11-6 \
-            libx11-xcb1 \
-            libxcb-dri3-0 \
-            libxcomposite1 \
-            libxcursor1 \
-            libxdamage1 \
-            libxext6 \
-            libxfixes3 \
-            libxi6 \
-            libxrandr2 \
-            libxrender1 \
-            libxshmfence1 \
-            libxss1 \
-            libxtst6 \
-        && grafana-cli plugins install "grafana-image-renderer" "${GRAFANA_IMAGE_RENDERER_VERSION#v}"; \
-    fi \
     \
     && rm -fr \
         /tmp/* \
@@ -85,13 +57,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Franck Nijhof <frenck@addons.community>" \
+    maintainer="Sam Black" \
     io.hass.name="${BUILD_NAME}" \
     io.hass.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
+    org.opencontainers.image.vendor="hellosamblack" \
+    org.opencontainers.image.authors="Sam Black" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.url="https://github.com/hellosamblack/addon-grafana" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \

@@ -1,16 +1,16 @@
 ---
-name: Grafana
-version: dev
+name: Grafana v13
+version: 13.0.1
 slug: grafana
-description: The open platform for beautiful analytics and monitoring
-url: https://github.com/hassio-addons/addon-grafana
+description: Fork of the Community Grafana add-on, updated for Grafana OSS v13
+url: https://github.com/hellosamblack/addon-grafana
 startup: services
 ingress: true
 ingress_port: 1337
 ingress_stream: true
 init: false
 panel_icon: mdi:chart-timeline
-panel_title: Grafana
+panel_title: Grafana v13
 arch:
   - aarch64
   - amd64

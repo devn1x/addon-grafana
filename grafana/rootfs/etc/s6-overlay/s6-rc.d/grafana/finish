@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: Grafana
+# Home Assistant Add-on: Grafana v13 Fork
 # Take down the S6 supervision tree when Grafana fails
 # ==============================================================================
 declare exit_code

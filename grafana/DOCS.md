@@ -1,14 +1,14 @@
-# Home Assistant Community Add-on: Grafana
+# Home Assistant Add-on: Grafana v13 Fork
 
-The analytics platform for all your metrics.
+Fork of the Grafana add-on v12 packaging, updated to run Grafana OSS v13.0.1.
 
 Grafana allows you to query, visualize, alert on and understand your metrics
 no matter where they are stored. Create, explore, and share dashboards. Learn
 about your Home Automation system using sexy and compelling graphs, and other
 data visualizations.
 
-Combine this add-on with the InfluxDB add-on to get insanely powerful
-insights to your home.
+Combine this add-on with the InfluxDB add-on to get powerful insights into your
+home.
 
 ## Installation
 
@@ -21,8 +21,8 @@ comparison to installing any other Home Assistant add-on.
    [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
 1. Click the "Install" button to install the add-on.
-1. Start the "Grafana" add-on.
-1. Check the logs of the "Grafana" to see if everything went well.
+1. Start the "Grafana v13" add-on.
+1. Check the logs of the "Grafana v13" add-on to see if everything went well.
 1. Open the Web UI.
 
 **Note**: As the addon now supports both Ingress and direct access, the default
@@ -109,6 +109,11 @@ documentation:
 
 **Note**: _Only environment variables starting with `GF_` are accepted.\_
 
+For Grafana 13 image rendering, configure a separate remote renderer service
+with environment variables such as `GF_RENDERING_SERVER_URL` and
+`GF_RENDERING_CALLBACK_URL`. The old bundled image renderer plugin is no longer
+installed by this add-on.
+
 ## Using it with the InfluxDB Community add-on
 
 Grafana does not come out of the box pre-configured, but letting it interact
@@ -156,9 +161,9 @@ rendered image inside of a dashboard. For more details see
 
 ## Known issues and limitations
 
-- `To render a panel image, you must install the Grafana Image Renderer plugin.`
-  This message is shown on ARM devices, like a Raspberry Pi. The Grafana Image
-  Renderer plugin is not available for these devices.
+- Grafana 13 no longer uses the bundled Grafana Image Renderer plugin in this
+  add-on. If you need rendered images, run a separate renderer service and set
+  `GF_RENDERING_SERVER_URL` plus `GF_RENDERING_CALLBACK_URL` in `env_vars`.
 
 ## Changelog & Releases
 
@@ -179,8 +184,8 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
+- This repository's [GitHub Issues][issue] for fork-specific support and feature
+  requests.
 - The [Home Assistant Discord chat server][discord-ha] for general Home
   Assistant discussions and questions.
 - The Home Assistant [Community Forum][forum].
@@ -190,10 +195,10 @@ You could also [open an issue here][issue] GitHub.
 
 ## Authors & contributors
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+The original add-on was created by [Franck Nijhof][frenck].
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+This fork is maintained by Sam Black. For a full list of all authors and
+contributors, check [the contributor's page][contributors].
 
 ## License
 
@@ -220,15 +225,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_grafana&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[contributors]: https://github.com/hassio-addons/addon-grafana/graphs/contributors
+[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_grafana&repository_url=https%3A%2F%2Fgithub.com%2Fhellosamblack%2Faddon-grafana
+[contributors]: https://github.com/hellosamblack/addon-grafana/graphs/contributors
 [create-db]: https://github.com/hassio-addons/addon-influxdb/blob/main/influxdb/DOCS.md#integrating-into-home-assistant
 [discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-grafana/54674?u=frenck
+[forum]: https://community.home-assistant.io/
 [frenck]: https://github.com/frenck
 [influxdb-addon]: https://github.com/hassio-addons/addon-influxdb
-[issue]: https://github.com/hassio-addons/addon-grafana/issues
+[issue]: https://github.com/hellosamblack/addon-grafana/issues
 [reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-grafana/releases
+[releases]: https://github.com/hellosamblack/addon-grafana/releases
 [semver]: https://semver.org/spec/v2.0.0.html
