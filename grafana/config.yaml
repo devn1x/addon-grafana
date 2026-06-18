@@ -1,5 +1,5 @@
 ---
-name: Grafana v13
+name: Grafana v13 ForkFork
 version: 13.0.1
 slug: grafana
 description: Fork of the Community Grafana add-on, updated for Grafana OSS v13
